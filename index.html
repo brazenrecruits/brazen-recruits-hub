@@ -1,0 +1,510 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>SGT Kara Andrews | Texas Army National Guard</title>
+<meta name="description" content="Connect with SGT Kara Andrews — Texas Army National Guard Recruiter serving the DFW area." />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Barlow:wght@300;400;500;600;700&family=Barlow+Condensed:wght@500;600;700&display=swap" rel="stylesheet" />
+<style>
+  :root {
+    --gold: #C5A55A;
+    --gold-light: #DFC07F;
+    --gold-accent: #E8A832;
+    --army-black: #0C0D0A;
+    --card-bg: #1A1C16;
+    --card-border: #2A2D22;
+    --white: #F0EDE6;
+    --gray: #8A8E96;
+    --gray-light: #B0B4BC;
+    --olive: #4B5320;
+    --olive-hover: #5C6628;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    font-family: 'Barlow', sans-serif;
+    background: var(--army-black);
+    color: var(--white);
+    min-height: 100vh;
+    overflow-x: hidden;
+  }
+
+  body::before {
+    content: '';
+    position: fixed;
+    inset: 0;
+    background:
+      radial-gradient(ellipse at 50% 0%, rgba(75, 83, 32, 0.12) 0%, transparent 55%),
+      radial-gradient(ellipse at 80% 100%, rgba(197, 165, 90, 0.04) 0%, transparent 50%);
+    pointer-events: none;
+    z-index: 0;
+  }
+
+  .page {
+    position: relative;
+    z-index: 1;
+    max-width: 480px;
+    margin: 0 auto;
+    padding: 0 16px 48px;
+  }
+
+  /* ── HEADER ── */
+  .header {
+    text-align: center;
+    padding: 40px 0 4px;
+    animation: fadeDown 0.6s ease-out;
+  }
+
+  .branch-label {
+    font-family: 'Bebas Neue', cursive;
+    font-size: 13px;
+    letter-spacing: 5px;
+    color: var(--gold);
+    text-transform: uppercase;
+    margin-bottom: 8px;
+  }
+
+  .army-logo svg { width: 180px; }
+
+  /* ── PROFILE ── */
+  .profile {
+    text-align: center;
+    padding: 28px 0 8px;
+    animation: fadeDown 0.7s ease-out;
+  }
+
+  .photo-frame {
+    width: 220px;
+    height: 220px;
+    margin: 0 auto 20px;
+    border-radius: 50%;
+    overflow: hidden;
+    border: 3px solid var(--gold);
+    box-shadow: 0 0 24px rgba(197, 165, 90, 0.15);
+  }
+  .photo-frame img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center 15%;
+  }
+
+  .rank-label {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-weight: 600;
+    font-size: 13px;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    color: var(--gray);
+  }
+
+  .name {
+    font-family: 'Bebas Neue', cursive;
+    font-size: 28px;
+    letter-spacing: 2px;
+    color: var(--white);
+    line-height: 1.1;
+    margin-bottom: 6px;
+  }
+
+  .tagline {
+    font-size: 14px;
+    color: var(--gray-light);
+    font-weight: 400;
+    line-height: 1.4;
+  }
+
+  /* ── LINK BUTTONS ── */
+  .links {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    margin-top: 28px;
+    animation: fadeUp 0.8s ease-out;
+  }
+
+  .link-btn {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    padding: 16px 20px;
+    background: var(--card-bg);
+    border: 1px solid var(--card-border);
+    border-radius: 10px;
+    color: var(--white);
+    text-decoration: none;
+    transition: all 0.25s ease;
+    position: relative;
+    overflow: hidden;
+  }
+  .link-btn:hover {
+    border-color: var(--gold);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 20px rgba(197, 165, 90, 0.08);
+  }
+  .link-btn:active {
+    transform: translateY(0);
+  }
+
+  .link-btn .icon {
+    width: 40px;
+    height: 40px;
+    border-radius: 8px;
+    background: rgba(197, 165, 90, 0.1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+  }
+  .link-btn .icon svg {
+    width: 20px;
+    height: 20px;
+    color: var(--gold);
+  }
+
+  .link-btn .icon.olive {
+    background: rgba(75, 83, 32, 0.25);
+  }
+  .link-btn .icon.olive svg {
+    color: #8fa344;
+  }
+
+  .link-text .title {
+    font-family: 'Bebas Neue', cursive;
+    font-size: 17px;
+    letter-spacing: 1.5px;
+    line-height: 1.2;
+  }
+  .link-text .desc {
+    font-size: 13px;
+    color: var(--gray);
+    line-height: 1.3;
+    margin-top: 2px;
+  }
+
+  .link-btn .arrow {
+    margin-left: auto;
+    width: 18px;
+    height: 18px;
+    color: var(--gray);
+    flex-shrink: 0;
+    transition: color 0.25s ease, transform 0.25s ease;
+  }
+  .link-btn:hover .arrow {
+    color: var(--gold);
+    transform: translateX(3px);
+  }
+
+  /* ── PRIMARY CTA ── */
+  .link-btn.primary {
+    background: var(--olive);
+    border-color: var(--olive);
+  }
+  .link-btn.primary:hover {
+    background: var(--olive-hover);
+    border-color: var(--olive-hover);
+    box-shadow: 0 4px 24px rgba(75, 83, 32, 0.2);
+  }
+  .link-btn.primary .icon {
+    background: rgba(255, 255, 255, 0.12);
+  }
+  .link-btn.primary .icon svg {
+    color: var(--white);
+  }
+  .link-btn.primary .arrow {
+    color: rgba(255, 255, 255, 0.5);
+  }
+  .link-btn.primary:hover .arrow {
+    color: var(--white);
+  }
+
+  /* ── DIVIDER ── */
+  .divider {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    margin: 28px 0 20px;
+    animation: fadeUp 0.9s ease-out;
+  }
+  .divider::before,
+  .divider::after {
+    content: '';
+    flex: 1;
+    height: 1px;
+    background: var(--card-border);
+  }
+  .divider span {
+    font-family: 'Bebas Neue', cursive;
+    font-size: 14px;
+    letter-spacing: 3px;
+    color: var(--gray);
+  }
+
+  /* ── CONTACT GRID ── */
+  .contact-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+    animation: fadeUp 1s ease-out;
+  }
+
+  .contact-btn {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+    padding: 18px 12px;
+    background: var(--card-bg);
+    border: 1px solid var(--card-border);
+    border-radius: 10px;
+    color: var(--white);
+    text-decoration: none;
+    transition: all 0.25s ease;
+  }
+  .contact-btn:hover {
+    border-color: var(--gold);
+    transform: translateY(-2px);
+  }
+  .contact-btn svg {
+    width: 22px;
+    height: 22px;
+    color: var(--gold);
+  }
+  .contact-btn .label {
+    font-family: 'Bebas Neue', cursive;
+    font-size: 14px;
+    letter-spacing: 2px;
+  }
+  .contact-btn .detail {
+    font-size: 12px;
+    color: var(--gray);
+    line-height: 1.3;
+    text-align: center;
+  }
+
+  /* ── SOCIAL ROW ── */
+  .socials {
+    display: flex;
+    justify-content: center;
+    gap: 14px;
+    margin-top: 28px;
+    animation: fadeUp 1.1s ease-out;
+  }
+
+  .social-circle {
+    width: 46px;
+    height: 46px;
+    border-radius: 50%;
+    background: var(--card-bg);
+    border: 1px solid var(--card-border);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.25s ease;
+    text-decoration: none;
+  }
+  .social-circle:hover {
+    border-color: var(--gold);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 16px rgba(197, 165, 90, 0.1);
+  }
+  .social-circle svg {
+    width: 20px;
+    height: 20px;
+    color: var(--white);
+  }
+
+  /* ── FOOTER ── */
+  .footer {
+    text-align: center;
+    padding: 36px 0 0;
+    animation: fadeUp 1.2s ease-out;
+  }
+  .footer .location {
+    font-size: 13px;
+    color: var(--gray);
+    line-height: 1.5;
+    margin-bottom: 8px;
+  }
+  .footer .location svg {
+    width: 14px;
+    height: 14px;
+    vertical-align: -2px;
+    margin-right: 4px;
+    color: var(--gray);
+  }
+  .footer .copyright {
+    font-size: 11px;
+    color: #555;
+    letter-spacing: 1px;
+    margin-top: 12px;
+  }
+
+  /* ── ANIMATIONS ── */
+  @keyframes fadeDown {
+    from { opacity: 0; transform: translateY(-16px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  @media (max-width: 360px) {
+    .name { font-size: 24px; }
+    .photo-frame { width: 120px; height: 120px; }
+    .contact-grid { grid-template-columns: 1fr; }
+  }
+</style>
+</head>
+<body>
+
+<div class="page">
+
+  <!-- HEADER -->
+  <div class="header">
+    <div class="army-logo">
+      <img src="txarng-shield-logo.png" alt="Texas Army National Guard" width="90" style="display:block;margin:0 auto;" />
+    </div>
+  </div>
+
+  <!-- PROFILE -->
+  <div class="profile">
+    <div class="photo-frame">
+      <img src="kara-headshot.png" alt="SGT Kara Andrews" />
+    </div>
+    <div class="rank-label">Sergeant</div>
+    <div class="name">KARA ANDREWS</div>
+    <div class="tagline">National Guard Recruiter &bull; DFW, Texas</div>
+  </div>
+
+  <!-- MAIN LINKS -->
+  <div class="links">
+
+    <!-- Primary CTA: Learn More / Lead Capture -->
+    <a href="https://info.brazenrecruits.com" class="link-btn primary">
+      <div class="icon">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+      </div>
+      <div class="link-text">
+        <div class="title">CONNECT WITH ME</div>
+        <div class="desc">Share your info &amp; I'll reach out personally</div>
+      </div>
+      <svg class="arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>
+    </a>
+
+    <!-- Pre-Qualification Survey -->
+    <a href="https://eligibility.brazenrecruits.com" class="link-btn">
+      <div class="icon olive">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 01-2 2H5a2 2 0 01-2-2V5a2 2 0 012-2h11"/></svg>
+      </div>
+      <div class="link-text">
+        <div class="title">SEE IF YOU QUALIFY</div>
+        <div class="desc">Quick 3-5 min eligibility check</div>
+      </div>
+      <svg class="arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>
+    </a>
+
+    <!-- Refer a Friend -->
+    <a href="https://refer.brazenrecruits.com" class="link-btn">
+      <div class="icon">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="8.5" cy="7" r="4"/><line x1="20" y1="8" x2="20" y2="14"/><line x1="23" y1="11" x2="17" y2="11"/></svg>
+      </div>
+      <div class="link-text">
+        <div class="title">REFER A FRIEND</div>
+        <div class="desc">Know someone who'd be a good fit?</div>
+      </div>
+      <svg class="arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>
+    </a>
+
+    <!-- 3 Things FAQ -->
+    <a href="https://3things.brazenrecruits.com" class="link-btn">
+      <div class="icon">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M9.09 9a3 3 0 015.83 1c0 2-3 3-3 3"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
+      </div>
+      <div class="link-text">
+        <div class="title">3 THINGS YOU DIDN'T KNOW</div>
+        <div class="desc">Benefits that might surprise you</div>
+      </div>
+      <svg class="arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>
+    </a>
+
+    <!-- What's It Like Part-Time? -->
+    <a href="https://parttime.brazenrecruits.com" class="link-btn">
+      <div class="icon">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+      </div>
+      <div class="link-text">
+        <div class="title">WHAT'S IT LIKE PART-TIME?</div>
+        <div class="desc">Drill weekends, pay, myths vs. reality</div>
+      </div>
+      <svg class="arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>
+    </a>
+
+    <!-- Schedule an Appointment -->
+    <a href="https://form.brazenrecruits.com" class="link-btn">
+      <div class="icon">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/><path d="M8 14h.01"/><path d="M12 14h.01"/><path d="M16 14h.01"/><path d="M8 18h.01"/><path d="M12 18h.01"/></svg>
+      </div>
+      <div class="link-text">
+        <div class="title">SCHEDULE AN APPOINTMENT</div>
+        <div class="desc">Ready to get started? Fill out the screening form</div>
+      </div>
+      <svg class="arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>
+    </a>
+
+  </div>
+
+  <!-- CONTACT -->
+  <div class="divider"><span>REACH OUT DIRECTLY</span></div>
+
+  <div class="contact-grid">
+    <a href="tel:9033720877" class="contact-btn">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+      <div class="label">CALL</div>
+      <div class="detail">903-372-0877</div>
+    </a>
+    <a href="sms:9033720877" class="contact-btn">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/></svg>
+      <div class="label">TEXT</div>
+      <div class="detail">903-372-0877</div>
+    </a>
+    <a href="mailto:kara.r.andrews.mil@army.mil" class="contact-btn">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+      <div class="label">EMAIL</div>
+      <div class="detail">kara.r.andrews<br/>.mil@army.mil</div>
+    </a>
+    <a href="https://maps.google.com/?q=5001+Main+St+The+Colony+TX+75056" target="_blank" rel="noopener" class="contact-btn">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+      <div class="label">VISIT</div>
+      <div class="detail">The Colony, TX</div>
+    </a>
+  </div>
+
+  <!-- SOCIALS -->
+  <div class="socials">
+    <a href="https://www.instagram.com/brazenrecruits" target="_blank" rel="noopener" class="social-circle" title="Instagram">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+    </a>
+    <a href="https://www.linkedin.com/in/sgt-kara-andrews-2ba6603a8" target="_blank" rel="noopener" class="social-circle" title="LinkedIn">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+    </a>
+  </div>
+
+  <!-- FOOTER -->
+  <div class="footer">
+    <div class="location">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+      5001 Main St, The Colony, TX 75056
+    </div>
+    <div class="copyright">TEXAS ARMY NATIONAL GUARD</div>
+  </div>
+
+</div>
+
+</body>
+</html>
